@@ -7,4 +7,5 @@ description: Eine Karte mit den Ständen des Weihnachtsmarktes 2014 und Angebots
 members:
   - name: Gerald
 layout: projekt
+screenshot: /img/screenshot-weihnachtsmarkt.jpg
 ---

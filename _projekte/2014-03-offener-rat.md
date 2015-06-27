@@ -7,5 +7,6 @@ description: Das offene Ratsinformationssystem für Münster
 members:
   - name: Mila
 layout: projekt
+screenshot: /img/screenshot-offenerrat.jpg
 ---
 ## Transparenz in den Gremien
