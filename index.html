@@ -3,16 +3,96 @@ layout: default
 title: Code for Münster
 ---
 <div id="main">
-  <div class="wrapper">
+  <div class="wrapper" id="main-codeadifference">
     <h1>Code a difference:</h1>
+    <br>
     <h3>Nutz' deine Fähigkeiten um deine Stadt zu verbessern!</h3>
+  </div>
+  <div class="wrapper" id="main-meetup">
     {% include meetup.html %}
     <div class="more-info">
+    <br>
       <p><a class="twitter-share-button" href="https://twitter.com/share" data-url="codeformuenster.org" data-text="Code for Münster, Code a Difference" data-via="codeformuenster"> Tweet </a>
         <script>
   window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
         </script>
-      <p><a href="http://www.muenster.de/stadt/galerie/prinzipalmarkt_prinzipalmarkt15.html">Foto: Presseamt Münster / Angelika Klauser</a></p>
+      <p id="fotocopyright">Foto: <a href="http://www.muenster.de/stadt/galerie/prinzipalmarkt_prinzipalmarkt15.html">Presseamt Münster / Angelika Klauser</a></p>
+    </div>
+  </div>
+  <div class="wrapper" id="main-blog">
+  <h2>Blog</h2>
+  <ul>
+    {% for post in site.posts limit:3 %}
+    <li>
+        [{{ post.date | date: "%-d." }}
+        {% assign m = post.date | date: "%-m" %}
+        {% case m %}
+          {% when '1' %}Januar
+          {% when '2' %}Februar
+          {% when '3' %}M&auml;rz
+          {% when '4' %}April
+          {% when '5' %}Mai
+          {% when '6' %}Juni
+          {% when '7' %}Juli
+          {% when '8' %}August
+          {% when '9' %}September
+          {% when '10' %}Oktober
+          {% when '11' %}November
+          {% when '12' %}Dezember
+        {% endcase %}
+        {{ post.date | date: "%Y" }}]
+        <a href="{{ post.url }}"><b>{{ post.title }}</b></a>
+    </li>
+    {% endfor %}
+  </ul>
+  </div>
+  <div class="wrapper" id="main-aboutus">
+    <div class="text">
+        <h2 id="ueber-uns">Wer sind wir?</h2>
+        <p>Wir sind Teil des <a href="http://codefor.de" target="_blank">Code for Germany</a> Netzwerkes ins Leben gerufen von der <a href="http://okfn.de" target="_blank">Open Knowledge Foundation</a> Deutschland. Code for Germany ist der deutsche Teil des <a href="http://codeforall.org" target="_blank">Code for All</a> Netzwerkes, welches von <a href="http://codeforamerica.org" target="_blank">Code for America</a> ins leben gerufen wurde. In Deutschland sind aktuell 13 so genannte OK Labs Anfang 2014 gegründet worden. In Münster haben Mila und Daniel die Initiative gestartet und seit dem Open Data Day sind ca. 10 Mitstreiter aus verschiedenen Unternehmen und Hintergründen aktiv. Die meisten von uns sind Softwareentwickler oder Studenten. Von den Studenten kommen die Mehrzahl vom <a href="http://ifgi.uni-muester.de" target="_blank">Institut für Geoinformatik</a>.</p>
+        <h2>Was machen wir?</h2>
+        <p>Wir wollen in Münster den Bürgern bessere Möglichkeiten zur Verfügung stellen sich zu informieren und zu beteiligen. Darüber hinaus wollen wir der Stadtverwaltung und Politikern helfen besser und direkter mit den Bürger zu kommunizieren und deren Feedback zu bekommen.</p>
+      </div>
+      <div class="leads">
+        <h3>Leads/Köpfe</h3>
+        <ul>
+          {% for lead in site.data.members.leads %}
+          <li>
+            {{lead.name}}
+            {% if lead.twitter %}
+              <a href="http://twitter.com/{{lead.twitter}}" target="_blank" class="falink">
+                <i class="fa fa-twitter"></i>
+              </a>
+            {% endif %}
+            {% if lead.github %}
+              <a href="http://github.com/{{lead.github}}" target="_blank" class="falink">
+                <i class="fa fa-github"></i>
+              </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="members">
+        <h3>Mitglieder</h3>
+        <ul>
+          {% for member in site.data.members.members %}
+          <li>
+            {{member.name}}
+            {% if member.twitter %}
+              <a href="http://twitter.com/{{member.twitter}}" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            {% endif %}
+            {% if member.github %}
+              <a href="http://github.com/{{member.github}}" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
