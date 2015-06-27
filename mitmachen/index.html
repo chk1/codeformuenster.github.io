@@ -2,32 +2,21 @@
 layout: default
 title: Code for Münster - Mitmachen
 ---
-<div class="wrapper">
-  <h2><a href="{{ "/blog/index.html" | prepend: site.baseurl }}">Geschichten aus Münster</a></h2>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li>
-      <span class="blogpostdate">{{ post.date | date: "%-d." }}
-      {% assign m = post.date | date: "%-m" %}
-      {% case m %}
-        {% when '1' %}Januar
-        {% when '2' %}Februar
-        {% when '3' %}M&auml;rz
-        {% when '4' %}April
-        {% when '5' %}Mai
-        {% when '6' %}Juni
-        {% when '7' %}Juli
-        {% when '8' %}August
-        {% when '9' %}September
-        {% when '10' %}Oktober
-        {% when '11' %}November
-        {% when '12' %}Dezember
-      {% endcase %}
-      {{ post.date | date: "%Y" }}</span>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <div> {{ post.excerpt }}</div>
-      <a href="{{ post.url }}">weiterlesen&hellip;</a>
-    </li>
-    {% endfor %}
+<div class="wrapper" id="contribute">
+  <ul>
+  <li class="box">
+  <h2>Forum</h2>
+  <p>Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa </p>
+  </li>
+
+  <li class="box">
+  <h2>Chat</h2>
+  <p>Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa </p>
+  </li>
+
+  <li class="box">
+  <h2>Lokale Treffen</h2>
+  <p>Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa Aa </p>
+  </li>
   </ul>
 </div>
