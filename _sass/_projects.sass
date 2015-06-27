@@ -1,22 +1,31 @@
 .wrapper
-  @include outer-container()
+  @include span-columns(10)
+  background-color: $cfde-lightgray
 #projects
   @include span-columns(10)
   padding: 1em
-  color: #fff
+  color: #000
+  a
+    color: $cfde-red
+    text-decoration: none
+    &:hover
+      color: #666
+      text-decoration: underline
+  h2
+    color: $cfde-red
+    text-decoration: none
   ul
     margin: 1em 0
     li.project
       margin: 1em 0
       padding: 1em
-      background: rgba(3,3,3,0.8)
+      background: white
       +clearfix
       .details
         border-top: 1px solid #fff
         ul
           li
             float: left
-            font-size: 1.5em
             padding: 0 2em 0 0
             i
               padding: 0 0.5em 0 0

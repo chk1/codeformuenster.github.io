@@ -1,32 +1,37 @@
 .blog
-  background: #E2F7CE
+  .blogpostdate
+    float: right
+    color: #666
+  background: $cfde-lightgray
+  a
+    color: #000
+    text-decoration: none
+    &:hover
+      color: #666
+      text-decoration: underline
   h2 a
-    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4)
+    color: $cfde-blue
+    text-decoration: none
   .wrapper
-    @include outer-container()
-    li a
-      font-weight: normal
-      font-size: 1.1em
-      text-shadow: none
-      font-weight: 600
+    @include span-columns(10)
     ul.posts
       padding: 20px
       li
         color: #444
         padding: 10px
-        background: #909A92
+        background: white
         font-size: 15px
         margin-bottom: 20px
         text-shadow: none
         p
-          font-weight: 600
-          line-height: 30px
+          font-weight: normal
+          line-height: 25px
         h2
           margin-top: 5px
           color: #323232
   .post
     @include outer-container()
-    background: #909A92
+    background: white
     padding: 20px 40px
     text-shadow: none
     color: #444
@@ -38,17 +43,16 @@
       margin: 0 0 0.75em
     p
       margin: 0 0 1.5em
+      text-align: justify
     ul
       margin: 0 0 1.5em
       list-style: circle
       list-style-position: inside
-  .pagination
     a
-      color: #333
-      font-size: 0.9em
-      &:hover
-        color: #777
-        text-decoration: underline
+      text-decoration: underline
+    img
+      padding: 10px
+  .pagination
     width: 100%
     +clearfix
     margin: 1em 0

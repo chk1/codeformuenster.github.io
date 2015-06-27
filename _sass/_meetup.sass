@@ -1,12 +1,13 @@
 #next-meetup
-  @include span-columns(5)
+  @include span-columns(10)
   @include shift(3)
   margin: 0 auto
   float: none
+  max-width: 50%
   @media screen and (max-width: 600px)
-    @include span-columns(10)
+    max-width: 100%
   #date
-    text-align: center
+    text-align: left
     border: 3px solid #fff
     padding: 20px
     background: rgba(255, 255, 255, 0.4)
@@ -32,15 +33,18 @@
       line-height: 1.2em
       font-weight: 300
     #description
-      font-size: 0.8em
+      font-size: 1.0em
       line-height: 1.3em
       font-weight: 200
     #rvsp-button
-      width: 200px
+      width: 150px
       margin: 10px auto
     #rvsp
       padding: 10px
       background: #ce5a4e
       border: 1px solid #ce5a4c
-      width: 140px
+      width: 150px
       color: white
+    p#description, p#description p
+      padding-top: 5px
+      text-align: justify

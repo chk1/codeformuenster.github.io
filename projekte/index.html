@@ -1,18 +1,19 @@
 ---
 layout: default
-title: Code for Münster
+title: Code for Münster - Projekte
 ---
 <div class="wrapper">
   <div id="projects">
     <ul>
-      {% for projekt in site.projekte %}
+      {% for projekt in site.projekte reversed %}
         <li class="project">
           <h2>{{projekt.title}}</h2>
+          {% if projekt.screenshot %}<img src="{{projekt.screenshot}}" style="float:right">{% endif %}
           <p>{{projekt.description}}</p>
           <div class="details">
             <ul>
-              <li><a href="{{projekt.link}}"><i class="fa fa-globe"></i>Webseite</a></li>
-              <li><a href="http://github.com/codeformuenster/{{projekt.github}}"><i class="fa fa-github"></i>Code</a></li>
+              <li><i class="fa fa-globe"></i><a href="{{projekt.link}}">Webseite</a></li>
+              <li><i class="fa fa-github"></i><a href="http://github.com/codeformuenster/{{projekt.github}}">Code</a></li>
               <li><i class="fa fa-rocket"></i>{{projekt.status}}</li>
             </ul>
           </div>
